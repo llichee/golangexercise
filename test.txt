@@ -1,0 +1,43 @@
+hello ni hao
+
+create table user (
+    id bigint primary key auto_increment,
+    name varchar(32) not null default '',
+    password varchar(1024) not null default '',
+    sex boolean not null default true,
+    birthday datetime not null,
+    addr text,
+    tel varchar(32) not null default '',
+    index idx_name(name),
+    index idx_birthday(birthday)
+) engine=innodb default charset=utf8mb4;
+
+创建索引： create index 索引名 on 表名(列名)
+    create index idx_name on table_name(name)
+
+删除索引: drop index 索引名称 on 表名；
+
+查询：
+    select * from 表名 WHERE 条件；
+        条件：列名  基准对象 比较
+            比较：
+                    关系运算： > < = != >= <=
+                    布尔运算：and or not
+                    like
+                        以某个字符串开头 like 'substr%'
+                        以某个字符串结尾 like '%substr'
+                        包含字符串 like '%substr%'
+                    like binary
+                        name kk, AK
+                    in (v1, v2, vn) 列表
+                字符串类型
+                数值类型
+                时间类型
+                bool类型
+    聚合查询：
+        select count(*) from 表名 where 条件;
+
+        group
+
+update 表名
+SET 列名=值, 列名=值
