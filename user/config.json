@@ -1,0 +1,5 @@
+{
+  "addr": "0.0.0.0:9999",
+  "dsn": "root:123456@tcp(192.168.93.175:3306)/users?charset=utf8mb4&loc=Local&parseTime=true",
+  "driverName": "mysql"
+}

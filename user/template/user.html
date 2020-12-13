@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>百度</title>
 </head>
 <body>
-$END$
+    <table>
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>性别</th>
+                <th>地址</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <a href="/create/">新建</a>
+            {{ range . }}
+                <tr>
+                    <td>{{ .Name }}</td>
+                    <td>{{ if .Gander }} 男 {{ else }} 女 {{ end }}</td>
+                    <td>{{ .Addr }}</td>
+                    <td>
+                        <a>编辑</a>
+                        <a href="/delete/?id={{ .ID }}">删除</a>
+                    </td>
+                </tr>
+            {{ end }}
+        </tbody>
+    </table>
 </body>
 </html>
